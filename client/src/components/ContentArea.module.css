@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "DisketMono";
+  src: url(../assets/fonts/DisketMono/Disket-Mono-Regular.ttf);
+}
+
+.contentBackcover {
+  height: calc(100vh - 190px); /* 198 */
+  background-color: rgb(255, 255, 255);
+  margin: 0 0px 0px 40px;
+  /* border: 2px solid #000; */
+  box-shadow: 8px 8px 0 #000;
+  overflow: auto;
+}
+
+.contentArea {
+  padding: 20px 40px;
+  background-color: white;
+  min-height: 65%;
+
+}
+.contentBody {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+}
+
+.leftSection,
+.rightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  position: relative;
+}
+
+.leftSection h3,
+.rightSection h3 {
+  font-family: 'DisketMono', monospace;
+  font-size: 18pt;
+  margin: 0 0 20px 0;
+  color: #000;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #000;
+  flex-shrink: 0;
+}
+
+.placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 40px 20px;
+  text-align: center;
+  /* max-height: min(100%, 500px); */
+  min-height: 0;
+  max-height: 120px;
+  height: 120px; 
+
+}
+
+.placeholder h4 {
+  font-family: "DisketMono";
+  font-size: 15pt;
+  margin: 0 0 15px 0;
+  color: #333;
+  font-weight:500;
+}
+
+.placeholder p {
+  font-family: 'DisketMono', monospace;
+  font-size: 12pt;
+  color: #666;
+  margin: 5px 0;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  position: relative;
+}
+
+.imageWrapper {
+  flex: 1;
+  border: 1px solid #ddd;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 0;
+  height: 100%;
+  max-height: 600px;
+  position: relative;
+}
+
+.image {
+  max-width: 65%;
+  max-height: 65%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+}
+
+.statusMessage {
+  /* justify-self: flex-end; */
+  margin-top: 15px;
+  padding: 15px;
+  background-color: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  font-family: 'DisketMono', monospace;
+  font-size: 12pt;
+  color: #333;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contentBody {
+    flex-direction: column;
+  }
+  
+  .leftSection,
+  .rightSection {
+    min-height: 300px;
+  }
+}
+
+.imageCounter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'DisketMono', monospace;
+  font-size: 10pt;
+  z-index: 1;
+}
+
+.imageWrapper {
+  flex: 1;
+  border: 1px solid #ddd;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 0;
+  height: 100%;
+  max-height: 400px;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.imageWrapper:hover {
+  border-color: #999;
+}
+
+.sliderHint {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'DisketMono', monospace;
+  font-size: 9pt;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+.imageWrapper:hover .sliderHint {
+  opacity: 1;
+}
